@@ -1,0 +1,27 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "E2E test for an app hosted on codepen",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^3.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "echo",
+    "cypress:run": "npx cypress run",
+    "cypress:open": "npx cypress open",
+    "test:ci": "npm run cypress:run",
+    "test:ci:chrome": "npm run cypress:run -- --browser chrome"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webmagit/cypress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webmagit/cypress/issues"
+  },
+  "homepage": "https://github.com/webmagit/cypress#readme"
+}
