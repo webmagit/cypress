@@ -11,6 +11,3 @@ workflows:
       # "run" is the name of the job defined in Cypress orb
       - cypress/run:
           record: true
-          parallel: true
-          parallelism: 4
-          group: "All Integration Tests"
