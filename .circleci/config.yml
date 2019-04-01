@@ -1,26 +1,16 @@
-version: 2
-jobs:
+# to use orbs, must use version >= 2.1
+version: 2.1
+orbs:
+  # import Cypress orb by specifying an exact version x.y.z
+  # or the latest version 1.x.x using "@1" syntax
+  cypress: cypress-io/cypress@1
+workflows:
   build:
-    docker:
-      - image: circleci/node:10
-
-    working_directory: ~/webmagit/cypress
-
-    steps:
-      - checkout
-
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
-      - run: npm ci
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      - run: npm run test:ci
+    jobs:
+      # "cypress" is the name of the imported orb
+      # "run" is the name of the job defined in Cypress orb
+      - cypress/run:
+          record: true
+          parallel: true
+          parallelism: 4
+          group: "All Integration Tests"
