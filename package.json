@@ -9,7 +9,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "echo",
-    "cypress:run": "npx cypress run --record --key 0b5c8bc6-cedb-409c-ba67-484ffd5203fb",
+    "cypress:run": "npx cypress run --record",
     "cypress:open": "npx cypress open",
     "test:ci": "npm run cypress:run",
     "test:ci:chrome": "npm run cypress:run -- --browser chrome"
